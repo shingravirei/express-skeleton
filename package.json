@@ -1,0 +1,21 @@
+{
+    "name": "express-boilerplate",
+    "version": "0.0.1",
+    "main": "server.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "node ./src/server",
+        "server": "start http://localhost:3000/ && nodemon ./src/server",
+        "eslint-init": "eslint --init"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0"
+    },
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-plugin-import": "^2.20.1",
+        "nodemon": "^2.0.2"
+    }
+}
