@@ -2,20 +2,20 @@
 
 ## Features
 
--   View engine - Handlebars
+  View engine - Handlebars
 
--   Yarn 2
+* Yarn 2
 
--   Prettier and Eslint configs included
+* Prettier and Eslint configs included
 
--   Basic scripts
+* Basic scripts
 
--   It provides you a directory tree to make development a little bit easier :)
+* It provides you a directory tree to make development a little bit easier :)
 
 ## Todo
 
--   Add body-parser
+* Add body-parser
 
--   Configure some logger
+* Configure some logger
 
--   Add controller directory
+* Add controller directory
