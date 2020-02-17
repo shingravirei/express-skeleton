@@ -1,9 +1,9 @@
 const bcrypt = require('bcrypt');
 const { User } = require('../models/User');
 
-const login = (req, res) => {
-    res.render('login', {
-        title: 'Login',
+const register = (req, res) => {
+    res.render('register', {
+        title: 'Register',
         error: req.flash('error'),
         warning: req.flash('warning'),
         username: req.flash('username'),
@@ -11,7 +11,7 @@ const login = (req, res) => {
     });
 };
 
-const handleLoginForm = async (req, res) => {
+const handleRegisterForm = async (req, res) => {
     try {
         const { password, confirmPassword } = req.body;
 
@@ -28,7 +28,7 @@ const handleLoginForm = async (req, res) => {
                     'There is already an user with the same username'
                 );
                 req.flash('email', email);
-                res.redirect('/login');
+                res.redirect('/register');
             } else {
                 User.create({
                     username,
@@ -48,16 +48,16 @@ const handleLoginForm = async (req, res) => {
             req.flash('warning', ['Passwords do not match']);
             req.flash('username', req.body.username);
             req.flash('email', req.body.email);
-            res.redirect('/login');
+            res.redirect('/register');
         }
     } catch (err) {
         console.log(err);
         req.flash('error', err);
-        res.redirect('/login');
+        res.redirect('/register');
     }
 };
 
 module.exports = {
-    login,
-    handleLoginForm
+    register,
+    handleRegisterForm
 };
