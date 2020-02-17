@@ -1,0 +1,8 @@
+{{#if error}}
+{{#each error}}
+<div class="notification is-danger">
+    <button class="delete"></button>
+    {{this}}
+</div>
+{{/each}}
+{{/if}}
