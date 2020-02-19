@@ -1,7 +1,10 @@
 const router = require('express').Router();
 
-const dashboard = require('../controllers/dashboard');
-
-router.get('/', dashboard);
+router.get('/', (req, res) => {
+    res.render('dashboard', {
+        title: 'Dashboard',
+        sucess: req.flash('sucess')
+    });
+});
 
 module.exports = router;
