@@ -6,6 +6,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const flash = require('connect-flash');
 const home = require('./routes/home');
+const login = require('./routes/login');
 const register = require('./routes/register');
 const dashboard = require('./routes/dashboard');
 // Instanciating express
@@ -36,6 +37,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Router setup
 app.use('/', home);
+app.use('/', login);
 app.use('/', register);
 app.use('/dashboard', dashboard);
 

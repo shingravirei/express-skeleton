@@ -1,27 +1,17 @@
 <div class="d columns is-centered">
     <div class="column is-6">
-        <h1 class="title">Register</h1>
+        <h1 class="title">Login</h1>
         {{> error}}
         {{> warning}}
-        <form action="/register" method="POST">
+        <form action="/login" method="POST">
             <div class="field">
                 <label class="label" for="name">Username:</label>
                 <input id="name" name="username" class="input" type="text" placeholder="Username" value="{{username}}"
                     required>
             </div>
             <div class="field">
-                <label for="email" class="label">E-mail:</label>
-                <input id="email" class="input" name="email" type="email" placeholder="E-mail" value="{{email}}"
-                    required>
-            </div>
-            <div class="field">
                 <label for="password" class="label">Password:</label>
                 <input id="password" class="input" name="password" type="password" placeholder="Password" required>
-            </div>
-            <div class="field">
-                <label for="confirm-password" class="label">Confirm Password:</label>
-                <input id="confirm-password" class="input" name="confirmPassword" type="password"
-                    placeholder="Confirm Password" required>
             </div>
             <div class="control">
                 <button class="button is-primary" type="submit">Submit</button>
