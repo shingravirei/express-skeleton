@@ -3,12 +3,18 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const path = require('path');
-const exphbs = require('express-handlebars');
 const flash = require('connect-flash');
+const exphbs = require('express-handlebars');
+const passport = require('./config/passport');
+// -----------------
+// importing routers
+// -----------------
 const home = require('./routes/home');
 const login = require('./routes/login');
 const register = require('./routes/register');
 const dashboard = require('./routes/dashboard');
+const logout = require('./routes/logout');
+
 // Instanciating express
 const app = express();
 
@@ -31,13 +37,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Connect flash
 app.use(flash());
 
-// Setting up public and views dir
+// passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Setting up public and views folders
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 
 // Router setup
 app.use('/', home);
 app.use('/', login);
+app.use('/', logout);
 app.use('/', register);
 app.use('/dashboard', dashboard);
 

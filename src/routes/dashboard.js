@@ -1,9 +1,12 @@
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
+const { ensureAuthenticated } = require('../config/auth');
+
+router.get('/', ensureAuthenticated, (req, res) => {
     res.render('dashboard', {
         title: 'Dashboard',
-        sucess: req.flash('sucess')
+        success: req.flash('success'),
+        isAuth: req.isAuthenticated()
     });
 });
 

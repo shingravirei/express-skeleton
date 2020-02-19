@@ -29,6 +29,7 @@
             4
         ],
         "comma-dangle": "off",
-        "arrow-parens": "off"
+        "arrow-parens": "off",
+        "consistent-return": "warn"
     }
 }

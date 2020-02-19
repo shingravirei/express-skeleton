@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
 
+const { Op } = Sequelize;
+
 const sequelize = new Sequelize({
     dialect: 'sqlite',
     storage: './db.db'
@@ -45,4 +47,4 @@ const User = sequelize.define(
 //         console.log('Unable to connect to db.', err);
 //     });
 
-module.exports = { User, sequelize };
+module.exports = { User, sequelize, Op };

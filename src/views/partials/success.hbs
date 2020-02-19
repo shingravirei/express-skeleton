@@ -1,8 +1,8 @@
-<h1 class="title">Dashboard</h1>
-
+{{#if success}}
 {{#each success}}
 <div class="notification is-success">
     <button class="delete"></button>
     {{this}}
 </div>
 {{/each}}
+{{/if}}

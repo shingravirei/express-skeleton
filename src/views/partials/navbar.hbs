@@ -44,12 +44,20 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
+
+                    {{#if isAuth}}
+                    <a href="/logout" class="button is-danger">
+                        Log Out
+                    </a>
+                    {{else}}
                     <a href="/register" class="button is-success">
                         <strong>Register</strong>
                     </a>
-                    <a href="login" class="button is-light">
-                        Log in
+                    <a href="/login" class="button is-light">
+                        Log In
                     </a>
+                    {{/if}}
+
                 </div>
             </div>
         </div>
