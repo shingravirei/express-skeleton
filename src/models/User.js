@@ -4,7 +4,8 @@ const { Op } = Sequelize;
 
 const sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: './db.db'
+    storage: './db.db',
+    logging: false
 });
 
 const User = sequelize.define(

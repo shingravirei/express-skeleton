@@ -42,17 +42,17 @@ router.post('/register', async (req, res) => {
         } else {
             const hash = bcrypt.hashSync(password, 10);
 
-            User.create({
+            await User.create({
                 username,
                 email,
                 password: hash
-            }).then(() => {
-                req.flash(
-                    'success',
-                    'Account succeffuly created! You can login now.'
-                );
-                res.redirect('/dashboard');
             });
+
+            req.flash(
+                'success',
+                'Account succeffuly created! You can login now.'
+            );
+            res.redirect('/login');
         }
     } catch (err) {
         console.log(err);
